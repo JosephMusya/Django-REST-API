@@ -1,0 +1,17 @@
+from django.shortcuts import render
+
+from rest_framework import status
+from rest_framework.decorators import APIView
+from rest_framework.response import Response
+from base.models import Event
+from base.serializers import EventSerializer
+from django.http import Http404
+from rest_framework import generics
+
+class EventList(generics.ListCreateAPIView):
+    queryset = Event.objects.all()
+    serializer_class = Evequeryset = EventSerializer
+
+class EventDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Event.objects.all()
+    serializer_class = Evequeryset = EventSerializer
